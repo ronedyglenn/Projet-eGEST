@@ -1,0 +1,132 @@
+
+    /* couleur-1: #f73acc;
+        couler-2: #121824
+     */
+
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+/* HEADER START */
+
+.coach-profile{
+    width: 50px;
+    margin-right: 1rem;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    background: #121824;
+    color: white;
+    padding: 0 50px;
+    align-items: center;
+    
+}
+
+.title{
+    margin-right: 1rem;
+}
+
+.left-header{
+    display: flex;
+    /* justify-content: space-around; */
+    width: 50vw;
+    align-items: center;
+}
+.right-header{
+    display: flex;
+    align-items: center;
+    width: 50vw;
+    justify-content: flex-end;  
+    
+
+}
+
+input{
+    width: 60%;
+    height: 50%;
+    padding: 0.5rem 1rem;
+    outline: none;
+}
+
+tr button{
+    border: none;
+    color: #fff;
+    background: #1b2335;
+    border-radius: 10px;
+    padding: 3px 8px;
+}
+
+/* The left side styling*/
+
+.left-side{
+    width: 15rem;
+    background: #1b2335;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2%;
+}
+
+/*The right side start*/
+
+.right-side{
+    background: #edecec;
+    height: 590px;
+    width: 100%;
+    
+}
+
+main{
+    height: 100%;
+    display: flex;
+    
+}
+
+.header-rightSide{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
+.header-rightSide > button{
+    border: none;
+    background: #1b2335;
+    padding: 0 10px;
+    color: #fff;
+}
+
+table{
+    margin: 0 auto;
+    width: 98%;
+    background: #fff;
+    
+    
+}
+thead tr th{
+    border-bottom: 1px solid rgb(216, 216, 216);
+    background-color: #1b2335;
+    color: #fff;
+    
+}
+
+td > img{
+    width: 50px;
+    
+}
+
+tr td{
+    border-bottom: 1px solid rgb(216, 216, 216);
+    text-align: center;
+}
+
+thead > tr > th{
+    text-align: center;
+    padding: 0 10px;
+}

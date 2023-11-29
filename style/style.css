@@ -1,0 +1,74 @@
+/*police utilisée*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+   font-family: 'Roboto', sans-serif;
+   color: #fff;
+   padding: 0;
+   margin: 0; 
+   height: 100vh;
+   background-image: url("../src/images/arrière_plan.jpeg");
+   background-position: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.container{
+    width: 80%;
+    height: 80%;
+    background-image: url("../src/images/arrière_plan.jpeg");
+    box-shadow: 5px 5px 5px 5px black;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+hr{
+    width: 6%;
+    margin: 0;
+}
+
+.right-side{
+    width: 35%;
+    height: 70%;
+    border: 3px solid #f73acc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121824;
+    box-shadow: 5px 0 5px black;
+}
+
+/*Stylisation du formulaire*/
+.identifiant, .password{
+    width: 70%;
+    padding: 2%;
+    border-radius: 50px;
+    border: none;
+}
+
+button{
+    padding: 4%;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(to top, #f73acc, #b82ecd, #4343A3);
+    color: #fff;
+    width: 75%;
+}
+
+.formulaire{
+    width: 90%;
+    margin-left: 20%;
+    
+}
+
+.title-rightSide{
+    margin-left: 20%;
+}
+
+
+
+
+
