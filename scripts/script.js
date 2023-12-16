@@ -6,3 +6,7 @@ const client = async()=>{
 
 client()
 
+
+fetch('')
+.then(reponse => reponse)
+.then(data => data)
