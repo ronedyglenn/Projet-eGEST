@@ -47,6 +47,7 @@ hr{
     padding: 2%;
     border-radius: 50px;
     border: none;
+    outline: none;
 }
 
 button{
