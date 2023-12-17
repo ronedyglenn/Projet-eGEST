@@ -1,12 +1,17 @@
-const client = async()=>{
-    let req = await fetch('https://94d6-41-158-125-192.ngrok-free.app/apprenant')
-    let reponse = req.json()
-    console.log(reponse);
-} 
 
-client()
+function recuperation(){
+    fetch('https://c6e6-102-142-98-3.ngrok-free.app/apprenant')
+    .then(res => {
+        if(!res.ok){
+            console.log("probème");
+            return;
+        }
+        return res.json()
+    })
+    .then(data => console.log(data))
+    .catch(error =>{
+        console.log(error);
+    })
+}
 
-
-fetch('')
-.then(reponse => reponse)
-.then(data => data)
+recuperation()
