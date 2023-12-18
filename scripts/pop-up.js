@@ -9,6 +9,7 @@ const inputValue = document.querySelector("#btn-profile_apprennant");
 //Evennement qui permet de changer la photo de profile
 inputValue.addEventListener('change', ()=>{
     profile.src= URL.createObjectURL(inputValue.files[0]);
+    
 })
 
 /**
@@ -37,31 +38,3 @@ bouttonFermer.addEventListener('click', ()=>{
  */
 
 
-//Selection du boutton de suppression
-const drashButton = document.querySelector('.drash');
-drashButton.addEventListener('click', ()=>{
-    if(confirm('Voulez vraiment supprimer un apprenant?')){
-        alert("l'apprenant est supprimé");
-    }else{
-        console.log("Vous n'avez pas confirmé");
-    }
-})
-
-/**
- * Il s'agit des modifications liées à l'apprenant
- */
-
-let validerModif = document.querySelector('#valider-modif');
-let AnnulerModif = document.querySelector('#Annuler-modif');
-//Selection du boutton de modification
-let bouttonModify = document.querySelector(".modify")
-//Section du popUp de modification
-let modification = document.querySelector(".modifierProfileFinale")
-//Evennemnt
-bouttonModify.addEventListener('click', ()=>{
-    modification.classList.toggle("modifierProfile")
-})
-//Retirer la class pour faire disparaite le popUp
-.addEventListener('click', ()=>{
-    AnnulerModif.classList.remove("modifierProfile")
-})

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router()
 const mysql = require('mysql2');
-const connection = require('..//controller/bd')
+const connection = require('../controller/bd')
 
 
 router.get('/', (req, res) =>{
@@ -16,8 +16,8 @@ router.get('/', (req, res) =>{
 })
 
 router.post('/', (req, res) =>{
-    const {nom , sexe, date_de_naissance, prenom, email, niveau, activite_extrascolaire, filiere, num_tel } = req.body
-    connection.query('insert into apprenant (nom , sexe, date_de_naissance, prenom, email, niveau, activite_extrascolaire, filiere, num_tel) values (?,?,?,?,?,?,?,?,?)',[nom , sexe, date_de_naissance,prenom, email,niveau,activite_extrascolaire , filiere,num_tel], (error) =>{
+    const {nom , prenom, sexe, num_tel, email, date_de_naissance, filiere, niveau} = req.body
+    connection.query('insert into apprenant (nom , prenom, sexe, num_tel, email, date_de_naissance, filiere, niveau) values (?,?,?,?,?,?,?,?)',[nom , prenom, sexe, num_tel, email, date_de_naissance, filiere, niveau], (error) =>{
         if(error){
             console.error(error);
             res.status(500).send("erreur de création d'apprenant")
@@ -29,8 +29,8 @@ router.post('/', (req, res) =>{
 
 router.put('/:id', (req,res) =>{
     const {id_apprenant} =req.body
-    const {nom , sexe, date_de_naissance, prenom, email, niveau, activite_extrascolaire, filiere, num_tel } = req.body
-    connection.query('update apprenant set nom = ? , sexe = ?, filiere = ?, date_de_naissance = ?  prenom =? , email=?, niveau=?, activite_extrascolaire=?, filiere=?, num_tel=? where id= ?', [nom , sexe, date_de_naissance, prenom, email, niveau, activite_extrascolaire , filiere ,num_tel], (error) =>{
+    const {nom , prenom, sexe, num_tel, email, date_de_naissance, filiere, niveau } = req.body
+    connection.query('update apprenant set nom = ? , prenom =?, sexe = ?,  num_tel=?, email=?, date_de_naissance = ?, filiere = ?, niveau=? where id= ?', [nom , prenom, sexe, num_tel, email, date_de_naissance, filiere, niveau], (error) =>{
         if(error){
             console.error(error);
             res.status(500).send('erreur de modification')
