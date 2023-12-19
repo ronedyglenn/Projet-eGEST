@@ -7,7 +7,7 @@ const profile = document.querySelector(".profile_apprennant");
 //récupération de la valeur de l'input *file
 const inputValue = document.querySelector("#btn-profile_apprennant");
 //Evennement qui permet de changer la photo de profile
-inputValue.addEventListener('change', ()=>{
+inputValue.addEventListener('change', function(){
     profile.src= URL.createObjectURL(inputValue.files[0]);
     
 })
