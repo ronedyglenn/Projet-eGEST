@@ -9,6 +9,8 @@
 
  //Récupération de la photo de profil 
  let photoProfil = document.querySelector('.profile_apprennant')
+ // lien de la photo de profile
+ let photoLink = photoProfil.src = "../src/images/téléchargement.jpg"
 //recupération de la valeur Nom;
 let nom = document.querySelector("#nom");
 //recupération de la valeur prenom;
@@ -25,6 +27,8 @@ let date_de_naissance = document.querySelector("#date");
 let filiere = document.querySelector("#filiere");
 //recupération de la valeur niveau;
 let niveau = document.querySelector("#niveau");
+
+
 
 //Ajout de toutes les données dans la;
 
@@ -71,14 +75,11 @@ async function poster_les_apprenanats(){
         //recuperation de la balise tr
         let tbody = document.querySelector("tbody")
         
-        
-        
-    
         data.map(apprenant =>{
                 tbody.innerHTML += (`
                 <tr>
                     <td>${apprenant.Id_apprenant}</td>
-                    <td>${""}</td>
+                    <td><img src="../src/images/téléchargement.jpg" alt="" class="coach-profile"></td>
                     <td>${apprenant.nom}</td>
                     <td>${apprenant.prenom}</td>
                     <td>${apprenant.sexe}</td>
