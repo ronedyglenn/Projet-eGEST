@@ -111,6 +111,7 @@ table{
     margin: 0 auto;
     width: 98%;
     background: #fff;
+    overflow-y: auto;
     
     
 }

@@ -28,7 +28,6 @@ router.post('/', (req, res) =>{
 })
 
 router.put('/:id', (req,res) =>{
-    const {id_apprenant} =req.body
     const {nom , prenom, sexe, num_tel, email, date_de_naissance, filiere, niveau } = req.body
     connection.query('update apprenant set nom = ? , prenom =?, sexe = ?,  num_tel=?, email=?, date_de_naissance = ?, filiere = ?, niveau=? where id= ?', [nom , prenom, sexe, num_tel, email, date_de_naissance, filiere, niveau], (error) =>{
         if(error){
@@ -41,8 +40,8 @@ router.put('/:id', (req,res) =>{
 })
 
 router.delete('/:id', (req,res) =>{
-    const {id_apprenant} = req.params
-    connection.query('delete from apprenant where id_apprenant = ?', [id_apprenant],(error) =>{
+    const {Id_apprenant} = req.params.id
+    connection.query('DELETE FROM apprenant where Id_apprenant = ?', [req.params.id],(error, data) =>{
         if(error){
             console.log(error);
             res.send("erreur de suppression de l'apprenant ")
