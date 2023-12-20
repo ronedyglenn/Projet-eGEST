@@ -92,10 +92,61 @@ async function poster_les_apprenanats(){
                 </tr>
                 `)
                 
-                let modifyButton = document.querySelectorAll(".modify")
+                
+                         //Selection du formulaire de connexion
+        const form = document.querySelector('.formulaire2')
+        
+        /**
+         * Selection des différents champs
+        */
+       let nom = document.querySelector("#Nom1")
+       let prenom = document.querySelector("#Prenom1")
+       let num_tel = document.querySelector("#Number1")
+       let sexe = document.querySelector("#sexe1")
+       let email = document.querySelector("#email1")
+       let date_de_naissance = document.querySelector("#date1")
+       let filiere = document.querySelector("#filiere1")
+       let niveau = document.querySelector("#Niveau1")
+       
+       //les boutons du formulaire de modification
+       
+       let bouton1 = document.getElementById("valider-modif")
+       let bouton2 = document.getElementById("Annuler-Modif")
+       
+       
+
+       let modifyButton = document.querySelectorAll(".modify")
                 modifyButton.forEach(elem =>{
                     elem.addEventListener('click', ()=>{
-                        
+     
+       //div Parent du formulaire
+       let parentForm = document.querySelector('.modifierProfileFinale')
+       parentForm.classList.toggle('modifierProfile')
+
+       bouton2.addEventListener('click', ()=>{
+        parentForm.classList.remove("modifierProfile")
+       })
+
+       //Récupération du bouton modify
+       bouton1.addEventListener('click', ()=>{
+        fetch("http://localhost:3500/apprenant/" + elem.classList[1], {
+            method: "PUT",
+            headers: {"Content-type" : "application/json"},
+            body: JSON.stringify({
+            Id_apprenant: elem.classList[1],
+            nom:  nom.value,
+            prenom: prenom.value,
+            sexe: sexe.value,
+            num_tel: num_tel.value,
+            email: email.value,
+            date_de_naissance: date_de_naissance.value,
+            filiere: filiere.value,
+            niveau: niveau.value,
+            })
+        })
+        .then(data => data.json())
+        .then(data => console.log(data))
+       })
                     })
                 })
                 //Selection du boutton de suppression
@@ -123,54 +174,6 @@ async function poster_les_apprenanats(){
 }
     receiveData()
 
-    async function postData(){
-        //Selection du formulaire de connexion
-        const form = document.querySelector('form')
-        
-        /**
-         * Selection des différents champs
-        */
-       const nom = document.querySelector("#Nom1")
-       const prenom = document.querySelector("#Prenom1")
-       const num_tel = document.querySelector("#Number1")
-       const sexe = document.querySelector("#sexe1")
-       const email = document.querySelector("#email1")
-       const date_de_naissance = document.querySelector("#date1")
-       const filiere = document.querySelector("#filiere1")
-       const niveau = document.querySelector("#Niveau1")
+    // async function postData(){
        
-       //les boutons du formulaire de modification
-       
-       const bouton1 = document.getElementById("valider-modif")
-       const bouton2 = document.getElementById("Annuler-Modif")
-       
-       //div Parent du formulaire
-       let parentForm = document.querySelector('.modifierProfileFinale')
-       parentForm.classList.toggle('modifierProfile')
-
-       bouton2.addEventListener('click', ()=>{
-        parentForm.classList.remove("modifierProfile")
-       })
-
-       let modification = document.classList[1]
-
-       //Récupération du bouton modify
-       bouton1.addEventListener('click', async ()=>{
-        return await fetch("http://localhost:3500/apprenant/", {
-            method: "PUT",
-            headers: "content-type : application/json",
-            body: JSON.stringify({
-            nom:  nom.value,
-            prenom: prenom.value,
-            sexe: sexe.value,
-            num_tel: num_tel.value,
-            email: email.value,
-            date_de_naissance: date_de_naissance.value,
-            filiere: filiere.value,
-            niveau: niveau.value,
-            })
-        })
-        .then(data => data.json())
-        .then(data => console.log(data))
-       })
-    }
+    // }

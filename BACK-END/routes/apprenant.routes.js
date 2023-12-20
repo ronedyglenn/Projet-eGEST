@@ -28,8 +28,9 @@ router.post('/', (req, res) =>{
 })
 
 router.put('/:id', (req,res) =>{
-    const {nom , prenom, sexe, num_tel, email, date_de_naissance, filiere, niveau } = req.body
-    connection.query('update apprenant set nom = ? , prenom =?, sexe = ?,  num_tel=?, email=?, date_de_naissance = ?, filiere = ?, niveau=? where id= ?', [nom , prenom, sexe, num_tel, email, date_de_naissance, filiere, niveau], (error) =>{
+    const {Id_apprenant} = req.body
+    const { nom , prenom, sexe, num_tel, email, date_de_naissance, filiere, niveau } = req.body
+    connection.query('UPDATE apprenant SET nom=? , prenom=?, sexe =?,  num_tel=?, email=?, date_de_naissance=?, filiere=?, niveau=? where Id_apprenant=?', [nom , prenom, sexe, num_tel, email, date_de_naissance, filiere, niveau,Id_apprenant], (error) =>{
         if(error){
             console.error(error);
             res.status(500).send('erreur de modification')
@@ -41,7 +42,7 @@ router.put('/:id', (req,res) =>{
 
 router.delete('/:id', (req,res) =>{
     const {Id_apprenant} = req.params.id
-    connection.query('DELETE FROM apprenant where Id_apprenant = ?', [req.params.id],(error, data) =>{
+    connection.query('DELETE FROM apprenant where Id_apprenant=?', [req.params.id],(error, data) =>{
         if(error){
             console.log(error);
             res.send("erreur de suppression de l'apprenant ")
