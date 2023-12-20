@@ -33,8 +33,6 @@ bouttonFermer.addEventListener('click', ()=>{
 
 })
 
-/**
- * Confirmation et suppréssion d'un apprenant.
- */
+
 
 
