@@ -4,6 +4,7 @@ const mysql = require('mysql2');
 const connection = require('../controller/bd')
 
 
+
 router.get('/', (req, res) =>{
     console.log(req.session);
     connection.query("select * from apprenant", (error,data) =>{
